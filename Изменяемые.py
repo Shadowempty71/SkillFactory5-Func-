@@ -1,7 +1,4 @@
-M = [[i+j for j in range(5)] for i in range(5)]
-print(M)
-#[[0, 1, 2, 3, 4],
-# [1, 2, 3, 4, 5],
-# [2, 3, 4, 5, 6],
-# [3, 4, 5, 6, 7],
-# [4, 5, 6, 7, 8]]
+a = set(map(int,input("Введите первый список чисел через пробел:").split()))
+b = set(map(int,input("Введите второй список чисел через пробел:").split()))
+difference = a.symmetric_difference(b)
+print(list(difference))
