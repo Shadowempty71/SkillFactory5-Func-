@@ -1,4 +1,4 @@
-a = set(map(int,input("Введите первый список чисел через пробел:").split()))
-b = set(map(int,input("Введите второй список чисел через пробел:").split()))
-difference = a.symmetric_difference(b)
-print(list(difference))
+l = [i for i in range(1,11)]
+m = [i for i in range(10,0,-1)]
+for a in zip(l,m):
+    print(a)
