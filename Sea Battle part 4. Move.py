@@ -1,10 +1,10 @@
 field =[['-'] * 3 for i in range(3)] # игровое поле
 field[2][2] = 'X'
 
-def move():
+def move(): # здесь мы получаем данные с ходом от игрока и проверяем возможность хода
     x,y = map(int, input("Ваш ход. Введите числа через пробел:").split())
     while True:
-        if any((2 < item) or (item < 0) for item in(x, y)):
+        if any( (2 < item) or (item < 0) for item in(x, y)):
             print("Ход недопустим, - выбранная клетка вне игрового поля.Попробуйте сходить иначе")
             x, y = map(int, input("Введите числа через пробел:").split())
         elif field[x][y] != '-':
