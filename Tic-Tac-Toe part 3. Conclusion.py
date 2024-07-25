@@ -1,3 +1,7 @@
+field =[['-'] * 3 for i in range(3)] # игровое поле
+field[0][1] = 'X'
+
+
 def conclusion():# функция вывода в консоль
     print(f"  0 1 2")
     print(f"0 {field[0][0]} {field[0][1]} {field[0][2]}")
