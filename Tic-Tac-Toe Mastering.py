@@ -52,6 +52,15 @@ def move():
         else:
             return x,y
 
+def win_comb():
+    comb = [((0, 0), (0, 1), (0, 2)), ((1, 0), (1, 1), (1, 2)), ((2, 0), (2, 1), (2, 2)),
+            ((0, 0), (1, 1), (2, 2)), ((2, 0), (1, 1), (0, 2)), ((0, 0), (1, 0), (2, 0)),
+            ((0, 2), (1, 2), (2, 2)), ((0, 1), (1, 1), (2, 1))]
+    for a,b,c in comb:
+        if field[a[0]][a[1]] == field[b[0]][b[1]] == field[c[0]][c[1]] != "-":
+            return field[a[0]][a[1]]
+
+
 num = 0 # поочерёдные ходы
 print("Первым ходит крестик")
 while True:
@@ -59,13 +68,19 @@ while True:
 
     demonstration()
     x, y = move()
-    if num == 9:
-        print("Ничья!")
-        break
-    elif num %2 == 1:
+    if num %2 == 1:
         print("Сейчас ходит нолик")
         field[x][y] = "X"
     else:
         print("Сейчас ходит крестик")
         field[x][y] = "0"
+    win = win_comb()
+    if win:
+        print(f"Победил {win}")
+        demonstration()
+        break
+    if num == 9:
+        print("Ничья!")
+        demonstration()
+        break
 
